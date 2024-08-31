@@ -1,0 +1,43 @@
+{
+  "name": "swaggo-highlight",
+  "displayName": "Swaggo Highlight",
+  "description": "Highlight the swaggo comments and provide swaggo comments snippets.",
+  "version": "0.0.1",
+  "publisher": "qingshaner",
+  "license": "ISC",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsingshaner/swggo-highlight.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Visualization"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "embeddedLanguages": {
+          "meta.embedded.block.json": "json"
+        },
+        "path": "./syntaxes/swaggo.tmLanguage.json",
+        "scopeName": "source.swaggo",
+        "injectTo": [
+          "source.go"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "go",
+        "path": "./snippets/swaggo.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.1"
+  }
+}

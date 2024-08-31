@@ -1,0 +1,322 @@
+{
+  ".source.go": {
+    "@title": {
+      "prefix": "swag:title",
+      "body": "//\t@title\t${1:Swagger Example API}",
+      "description": "Required. The title of the application."
+    },
+    "@version": {
+      "prefix": "swag:version",
+      "body": "//\t@version\t${1:1.0}",
+      "description": "Required. Provides the version of the application API."
+    },
+    "@description": {
+      "prefix": "swag:description",
+      "body": "//\t@description\t${1:This is a sample server celler server.}",
+      "description": "A short description of the application."
+    },
+    "@tag.name": {
+      "prefix": "swag:tag.name",
+      "body": "//\t@tag.name\t${1:TagName}",
+      "description": "Name of a tag."
+    },
+    "@tag.description": {
+      "prefix": "swag:tag.description",
+      "body": "//\t@tag.description\t${1:Cool Description}",
+      "description": "Description of the tag"
+    },
+    "@tag.docs.url": {
+      "prefix": "swag:tag.docs.url",
+      "body": "//\t@tag.docs.url\t${1:https://example.com}",
+      "description": "Url of the external Documentation of the tag"
+    },
+    "@tag.docs.description": {
+      "prefix": "swag:tag.docs.description",
+      "body": "//\t@tag.docs.description\t${1:Best example documentation}",
+      "description": "Description of the external Documentation of the tag"
+    },
+    "@termsOfService": {
+      "prefix": "swag:termsOfService",
+      "body": "//\t@termsOfService\t${1:http://swagger.io/terms/}",
+      "description": "The Terms of Service for the API."
+    },
+    "@contact.name": {
+      "prefix": "swag:contact.name",
+      "body": "//\t@contact.name\t${1:API Support}",
+      "description": "The contact information for the exposed API."
+    },
+    "@contact.url": {
+      "prefix": "swag:contact.url",
+      "body": "//\t@contact.url\t${1:http://www.swagger.io/support}",
+      "description": "The URL pointing to the contact information. MUST be in the format of a URL."
+    },
+    "@contact.email": {
+      "prefix": "swag:contact.email",
+      "body": "//\t@contact.email\t${1:support@swagger.io}",
+      "description": "The email address of the contact person/organization. MUST be in the format of an email address."
+    },
+    "@license.name": {
+      "prefix": "swag:license.name",
+      "body": "//\t@license.name\t${1|ISC,MIT,Apache 2.0|}",
+      "description": "Required. The license name used for the API."
+    },
+    "@license.url": {
+      "prefix": "swag:license.url",
+      "body": "//\t@license.url\t${1:https://opensource.org/license/isc-license-txt}",
+      "description": "A URL to the license used for the API. MUST be in the format of a URL."
+    },
+    "@host": {
+      "prefix": "swag:host",
+      "body": "//\t@host\t${1:127.0.0.1:4936}",
+      "description": "The host (name or ip) serving the API."
+    },
+    "@BasePath": {
+      "prefix": "swag:BasePath",
+      "body": "//\t@BasePath\t${1:/api/v1}",
+      "description": "The base path on which the API is served."
+    },
+    "@accept": {
+      "prefix": "swag:accept",
+      "body": "//\t@accept\t${1|json,xml,plain,html,mpfd,x-www-form-urlencoded,json-api,json-stream,octet-stream,png,jpeg,gif|}",
+      "description": "A list of MIME types the APIs can consume. Note that Accept only affects operations with a request body, such as POST, PUT and PATCH.  Value MUST be as described under [Mime Types](#mime-types)."
+    },
+    "@produce": {
+      "prefix": "swag:produce",
+      "body": "//\t@produce\t${1|json,xml,plain,html,mpfd,x-www-form-urlencoded,json-api,json-stream,octet-stream,png,jpeg,gif|}",
+      "description": "A list of MIME types the APIs can produce. Value MUST be as described under [Mime Types](#mime-types)."
+    },
+    "@query.collection.format": {
+      "prefix": "swag:query.collection.format",
+      "body": "//\t@query.collection.format\t${1|csv,multi,pipes,tsv,ssv|}",
+      "description": "The default collection(array) param format in query,enums:csv,multi,pipes,tsv,ssv. If not set, csv is the default."
+    },
+    "@schemes": {
+      "prefix": "swag:schemes",
+      "body": "//\t@schemes\t${1|http,https|}",
+      "description": "The transfer protocol for the operation that separated by spaces."
+    },
+    "@externalDocs.description": {
+      "prefix": "swag:externalDocs.description",
+      "body": "//\t@externalDocs.description\t${1:OpenAPI}",
+      "description": "Description of the external document."
+    },
+    "@externalDocs.url": {
+      "prefix": "swag:externalDocs.url",
+      "body": "//\t@externalDocs.url\t${1:https://swagger.io/resources/open-api/}",
+      "description": "URL of the external document."
+    },
+    "@x-name": {
+      "prefix": "swag:x-name",
+      "body": "//\t@x-${1:name}\t${2:{\"key\": \"value\"}}",
+      "description": "The extension key, must be start by x- and take only json value"
+    },
+    "@description.markdown": {
+      "prefix": "swag:description.markdown",
+      "body": "//\t@description",
+      "description": "A short description of the application. Parsed from the api.md file. This is an alternative to @description, read form api.md"
+    },
+    "@tag.description.markdown": {
+      "prefix": "swag:tag.description.markdown",
+      "body": "//\t@tag.description.markdown",
+      "description": "Description of the tag this is an alternative to tag.description. The description will be read from a file named like tagname.md"
+    },
+
+    "@api-description": {
+      "prefix": "swag:description",
+      "body": "//\t@Description\t${1:User login api}",
+      "description": "A verbose explanation of the operation behavior."
+    },
+    "@api-description.markdown": {
+      "prefix": "swag:description.markdown",
+      "body": "//\t@Description.markdown\t${1:$TM_FILENAME_BASE}",
+      "description": "A short description of the application. The description will be read from a file.  E.g. `@description.markdown details` will load `details.md`"
+    },
+    "@api-id": {
+      "prefix": "swag:id",
+      "body": "//\t@ID\t${1:$UUID}",
+      "description": "A unique string used to identify the operation. Must be unique among all API operations."
+    },
+    "@api-tags": {
+      "prefix": "swag:tags",
+      "body": "//\t@Tags\t${1:users,login}",
+      "description": "A list of tags to each API operation that separated by commas."
+    },
+    "@api-summary": {
+      "prefix": "swag:summary",
+      "body": "//\t@Summary\t${1:Login}",
+      "description": "A short summary of what the operation does."
+    },
+    "@api-accept": {
+      "prefix": "swag:accept",
+      "body": "//\t@Accept\t${1|json,xml,plain,html,mpfd,x-www-form-urlencoded,json-api,json-stream,octet-stream,png,jpeg,gif|}",
+      "description": "A list of MIME types the APIs can consume. Note that Accept only affects operations with a request body, such as POST, PUT and PATCH.  Value MUST be as described under [Mime Types](#mime-types)."
+    },
+    "@api-produce": {
+      "prefix": "swag:produce",
+      "body": "//\t@Produce\t${1|json,xml,plain,html,mpfd,x-www-form-urlencoded,json-api,json-stream,octet-stream,png,jpeg,gif|}",
+      "description": "A list of MIME types the APIs can produce. Value MUST be as described under [Mime Types](#mime-types)."
+    },
+    "@api-param": {
+      "prefix": "swag:param",
+      "body": "//\t@Param\t${1:id}\t${2|query,path,header,body,formData|}\t${3|string,integer,number,boolean,file|}\t${4|true,false|}\t\"User ID\"",
+      "description": "Parameters that separated by spaces. `param name`,`param type`,`data type`,`is mandatory?`,`comment` `attribute(optional)`"
+    },
+    "@api-security": {
+      "prefix": "swag:security",
+      "body": "//\t@Security\t${1:}",
+      "description": "[Security](#security) to each API operation."
+    },
+    "@api-success": {
+      "prefix": "swag:success",
+      "body": "//\t@Success\t${1|200,201,204|}\t{${2|object,array,string,number,boolean|}}\t${3:resp.User}\t\"${4:comment}\"",
+      "description": "Success response that separated by spaces. `return code or default`,`{param type}`,`data type`,`comment`"
+    },
+    "@api-failure": {
+      "prefix": "swag:failure",
+      "body": "//\t@Failure\t${1|400,401,404,500|}\t{${2|object,array,string,number,boolean|}}\t${3:resp.UserErr}\t\"${4:comment}\"",
+      "description": "Failure response that separated by spaces. `return code or default`,`{param type}`,`data type`,`comment`"
+    },
+    "@api-response": {
+      "prefix": "swag:response",
+      "body": "//\t@Response\t${1|200,201,204|}\t{${2|object,array,string,number,boolean|}}\t${3:resp.User}\t\"${4:comment}\"",
+      "description": "As same as `success` and `failure`"
+    },
+    "@api-header": {
+      "prefix": "swag:header",
+      "body": "//\t@Header\t${1|200,201,204|}\t{${2|string,number,boolean|}}\t${3:Location}\t\"${4:comment}\"",
+      "description": "Header in response that separated by spaces. `return code`,`{param type}`,`data type`,`comment`"
+    },
+    "@api-router": {
+      "prefix": "swag:router",
+      "body": "//\t@Router\t${1:/users/{id}} [${2|get,post,put,delete,patch,options,head|}]",
+      "description": "Path definition that separated by spaces. `path`,`[httpMethod]`"
+    },
+    "@api-deprecatedrouter": {
+      "prefix": "swag:deprecatedrouter",
+      "body": "//\t@Deprecatedrouter\t${1:/users/{id}} [${2|get,post,put,delete,patch,,options,head|}]",
+      "description": "As same as router, but deprecated."
+    },
+    "@api-x-name": {
+      "prefix": "swag:x-name",
+      "body": "//\t@x-${1:name}\t${2:{\"key\": \"value\"}}",
+      "description": "The extension key, must be start by x- and take only json value."
+    },
+    "@api-x-codeSample": {
+      "prefix": "swag:x-codeSample",
+      "body": "//\t@x-codeSample\t${1:}",
+      "description": "Optional Markdown usage. take `file` as parameter. This will then search for a file named like the summary in the given folder."
+    },
+    "@api-deprecated": {
+      "prefix": "swag:deprecated",
+      "body": "//\t@Deprecated",
+      "description": "Mark endpoint as deprecated."
+    },
+
+    "@securityDefinitions.basic": {
+      "prefix": "swag:securityDefinitions.basic",
+      "body": "//\t@securityDefinitions.basic\t${1:BasicAuth}",
+      "description": "Basic auth."
+    },
+    "@securityDefinitions.apikey": {
+      "prefix": "swag:securityDefinitions.apikey",
+      "body": [
+        "//\t@securityDefinitions.apikey\t${1:ApiKey}",
+        "//\t@in\t${2|header,query,path,body,formData|}",
+        "//\t@in\t${3:Authorization}"
+      ],
+      "description": "API key auth."
+    },
+    "@securitydefinitions.oauth2.application": {
+      "prefix": "swag:securitydefinitions.oauth2.application",
+      "body": [
+        "//\t@securitydefinitions.oauth2.application\t${1:OAuth2Application}",
+        "//\t@tokenUrl\t${2:https://example.com/oauth/token}",
+        "//\t@scope.${3:write}\t${4:Grants write access}"
+      ],
+      "description": "OAuth2 application auth."
+    },
+    "@securitydefinitions.oauth2.implicit": {
+      "prefix": "swag:securitydefinitions.oauth2.implicit",
+      "body": [
+        "//\t@securitydefinitions.oauth2.implicit\t${1:OAuth2Implicit}",
+        "//\t@authorizationurl\t${2:https://example.com/oauth/authorize}",
+        "//\t@scope.${3:write}\t${4:Grants write access}"
+      ],
+      "description": "OAuth2 implicit auth."
+    },
+    "@securitydefinitions.oauth2.password": {
+      "prefix": "swag:securitydefinitions.oauth2.password",
+      "body": [
+        "//\t@securitydefinitions.oauth2.password\t${1:OAuth2Password}",
+        "//\t@tokenUrl\t${2:https://example.com/oauth/token}",
+        "//\t@scope.${3:write}\t${4:Grants write access}"
+      ],
+      "description": "OAuth2 password auth."
+    },
+    "@securitydefinitions.oauth2.accessCode": {
+      "prefix": "swag:securitydefinitions.oauth2.accessCode",
+      "body": [
+        "//\t@securitydefinitions.oauth2.accessCode\t${1:OAuth2AccessCode}",
+        "//\t@tokenUrl\t${2:https://example.com/oauth/token}",
+        "//\t@authorizationurl\t${3:https://example.com/oauth/authorize}",
+        "//\t@scope.${4:write}\t${5:Grants write access}"
+      ],
+      "description": "OAuth2 access code auth."
+    },
+
+    "@in": {
+      "prefix": "swag:in",
+      "body": "//\t@in\t${1|header,query,path,body,formData|}",
+      "description": "The location of the api key auth parameter."
+    },
+    "@name": {
+      "prefix": "swag:name",
+      "body": "//\t@name\t${1:Authorization}",
+      "description": "The name of the api key auth parameter."
+    },
+    "@tokenUrl": {
+      "prefix": "swag:tokenUrl",
+      "body": "//\t@tokenUrl\t${1:https://example.com/oauth/token}",
+      "description": "The URL to the token endpoint."
+    },
+    "@authorizationurl": {
+      "prefix": "swag:authorizationurl",
+      "body": "//\t@authorizationurl\t${1:https://example.com/oauth/authorize}",
+      "description": "The URL to the authorization endpoint."
+    },
+    "@scope": {
+      "prefix": "swag:scope",
+      "body": "//\t@scope\t${1:write}\t${2:Grants write access}",
+      "description": "The OAuth2 scope."
+    },
+
+    "@api": {
+      "prefix": "swag:api",
+      "body": [
+        "// ${1:Login}",
+        "//",
+        "//\t@Summary\t\t${2:Login API}",
+        "//\t@Description\t${3:A api for user login by password}",
+        "//\t@Tags\t\t\t${4:users,login}",
+        "//\t@Security\t\t${5:BearerToken}",
+        "//\t@Accept\t\t\t${6|json,xml,plain,html,mpfd,x-www-form-urlencoded,json-api,json-stream,octet-stream,png,jpeg,gif|}",
+        "//\t@Produce\t\t${7|json,xml,plain,html,mpfd,x-www-form-urlencoded,json-api,json-stream,octet-stream,png,jpeg,gif|}",
+        "//\t@Param\t\t\t${8:id}\t${9|query,path,header,body,formData|}\t${10|string,integer,number,boolean,file|}\t${11|true,false|}\t\"${12:User ID}\"",
+        "//\t@Success\t\t${13|200,201,204|}\t{${14|object,array,string,number,boolean|}}\t${15:resp.User}\t\"${16:comment}\"",
+        "//\t@Failure\t\t${17|400,401,404,500|}\t{${18|object,array,string,number,boolean|}}\t${19:resp.UserErr}\t\"${20:comment}\"",
+        "//\t@Router\t\t\t${21:/users/{id}} [${22|get,post,put,delete,patch,options,head|}]"
+      ]
+    },
+
+    "@apifox-status": {
+      "prefix": "swag:x-apifox-status",
+      "body": "//\t@x-apifox-status\t\"${1|designing,pending,integrating,tested,released,deprecated,exception,obsolete,testing,developing|}\"",
+      "description": "用于指定接口状态。"
+    },
+    "@apifox-folder": {
+      "prefix": "swag:x-apifox-folder",
+      "body": "//\t@x-apifox-folder\t\"${1:用户模块/登录}\"",
+      "description": "Apifox 会优先使用 x-apifox-folder 字段，如不存在该字段，则会使用 tags 字段里的第一个值。"
+    }
+  }
+}

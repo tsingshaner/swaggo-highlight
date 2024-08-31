@@ -1,0 +1,175 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Go",
+  "patterns": [
+    {
+      "patterns": [
+        { "include": "#router" },
+        { "include": "#at-keywords" },
+        { "include": "#custom-attributes" },
+        { "include": "#io-types" },
+        { "include": "#tags" },
+        { "include": "#param" },
+        { "include": "#response" },
+        { "include": "#security" }
+      ]
+    }
+  ],
+  "repository": {
+    "at-keywords": {
+      "patterns": [
+        {
+          "name": "entity.other.attribute-name",
+          "match": "(?<=\t@)((T|t)itle|(V|v)ersion|(D|d)escription|(T|t)ag\\.name|(T|t)ag\\.description|(T|t)ag\\.docs\\.url|(T|t)ag\\.docs\\.description|(T|t)ermsOfService|(C|c)ontact\\.name|(C|c)ontact\\.url|(C|c)ontact\\.email|(L|l)icense\\.name|(L|l)icense\\.url|(H|h)ost|(B|b)asePath|(A|a)ccept|(P|p)roduce|(Q|q)uery\\.collection\\.format|(S|s)chemes|(E|e)xternalDocs\\.(description|url)|(D|d)escription\\.markdown|(T|t)ag\\.description\\.markdown|(id|ID)|(T|t)ags|(S|s)ummary|(P|p)aram|(S|s)ecurity|(S|s)uccess|(F|f)ailure|(R|r)esponse|(H|h)eader|(R|r)outer|(D|d)eprecatedrouter|(D|d)eprecated)(?=\t|\n)"
+        }
+      ]
+    },
+    "custom-attributes": {
+      "patterns": [
+        {
+          "match": "(?<=\t@)x-[^\t]+\t",
+          "name": "entity.other.attribute-name"
+        },
+        {
+          "match": "(?<=\t@x-[^\t]+\t+)(.*)",
+          "name": "meta.embedded.block.json"
+        }
+      ]
+    },
+    "router": {
+      "patterns": [
+        {
+          "match": "(?<=@(BasePath|version)\t+)[^\\s]+",
+          "name": "entity.name.function"
+        },
+        {
+          "match": "(?<=\t@(r|R)outer\t+)([^\\s]+)\\s\\[(get|post|put|delete|patch|options|head)\\]",
+          "captures": {
+            "2": {
+              "name": "entity.name.function"
+            },
+            "3": {
+              "name": "keyword.control"
+            }
+          }
+        }
+      ]
+    },
+    "security": {
+      "patterns": [
+        {
+          "match": "(?<=\t@)(scope\\.[^\t]+|security(d|D)efinitions\\.(basic|apikey|oauth2\\.(application|implicit|password|accessCode))|in|name|tokenUrl|authorization(u|U)rl)\t+",
+          "name": "entity.other.attribute-name"
+        },
+        {
+          "name": "entity.name.tag",
+          "match": "(?<=\t@security(d|D)efinitions\\.[^\t]+\t+)[^\t]+"
+        },
+        {
+          "name": "entity.name.tag",
+          "match": "(?<=\t@(s|S)ecurity\t+)[^\t]+"
+        },
+        {
+          "name": "entity.name.type.go",
+          "match": "(?<=\t@in\t+)[^\t]+"
+        },
+        {
+          "name": "entity.name.tag",
+          "match": "(?<=\t@name\t+)[^\t]+"
+        }
+      ]
+    },
+    "io-types": {
+      "patterns": [
+        {
+          "name": "entity.name.type.go",
+          "match": "(?<=\t@((p|P)roduce|(a|A)ccept)\t+)[^\\s]+"
+        }
+      ]
+    },
+    "tags": {
+      "patterns": [
+        {
+          "name": "entity.name.tag",
+          "match": "(?<=\t@Tags\t+)(\\w+)(?=,|$)|(?<=,\\s*)(\\w+)(?=,|$)"
+        },
+        {
+          "match": "(?<=@tag\\.name\t)[^\\s]+",
+          "name": "entity.name.tag"
+        }
+      ]
+    },
+    "param": {
+      "patterns": [
+        {
+          "comment": "param name",
+          "name": "variable.name",
+          "match": "(?<=\t@(P|p)aram\t+)(\\w+)(?=\t)"
+        },
+        {
+          "comment": "param type",
+          "name": "storage.type",
+          "match": "(?<=\t@(P|p)aram\t+\\w+\t+)(path|query|header|body|formData)(?=\t)"
+        },
+        {
+          "comment": "data type",
+          "name": "entity.name.type.go",
+          "match": "(?<=\t@(P|p)aram\t+\\w+\t+\\w+\t+)([^\\t]+)(?=\t)"
+        },
+        {
+          "comment": "is required",
+          "name": "constant.language.boolean.go",
+          "match": "(?<=\t@(P|p)aram\t+\\w+\t+\\w+\t+[^\\t]+\t+)(true|false)(?=\t)"
+        },
+        {
+          "comment": "comment",
+          "match": "(?<=\t@(P|p)aram\t+\\w+\t+\\w+\t+[^\\t]+\t+\\w+\t+)(\")([^\"]*)(\")",
+          "captures": {
+            "2": {
+              "name": "punctuation.definition.string.begin"
+            },
+            "3": {
+              "name": "string.quoted.double"
+            },
+            "4": {
+              "name": "punctuation.definition.string.end"
+            }
+          }
+        }
+      ]
+    },
+    "response": {
+      "patterns": [
+        {
+          "match": "(?<=\t@((F|f)ailure|(S|s)uccess|(R|r)esponse)\t+)(\\d+)",
+          "name": "constant.numeric"
+        },
+        {
+          "match": "(?<=\t@((F|f)ailure|(S|s)uccess|(R|r)esponse)\t+\\d+\t+\\{)(\\w+)(?=\\})",
+          "name": "storage.type"
+        },
+        {
+          "match": "(?<=\t@((F|f)ailure|(S|s)uccess|(R|r)esponse)\t+\\d+\t+\\{\\w+\\}\t+)([^\\t]+)",
+          "name": "entity.name.type.go"
+        },
+        {
+          "match": "(?<=\t@((F|f)ailure|(S|s)uccess|(R|r)esponse)\t+\\d+\t+\\{\\w+\\}\t+[^\\t]+\t+)(\")([^\"]*)(\")",
+          "captures": {
+            "5": {
+              "name": "punctuation.definition.string.begin"
+            },
+            "6": {
+              "name": "string.quoted.double"
+            },
+            "7": {
+              "name": "punctuation.definition.string.end"
+            }
+          }
+
+        }
+      ]
+    }
+  },
+  "injectionSelector": "L:comment.line.double-slash",
+  "scopeName": "source.swaggo"
+}

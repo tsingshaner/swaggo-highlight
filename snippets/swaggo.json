@@ -188,7 +188,7 @@
     },
     "@api-router": {
       "prefix": "swag:router",
-      "body": "//\t@Router\t${1:/users/{id}} [${2|get,post,put,delete,patch,options,head|}]",
+      "body": "//\t@Router\t${1:/users/{id\\}} [${2|get,post,put,delete,patch,options,head|}]",
       "description": "Path definition that separated by spaces. `path`,`[httpMethod]`"
     },
     "@api-deprecatedrouter": {
@@ -304,7 +304,7 @@
         "//\t@Param\t\t\t${8:id}\t${9|query,path,header,body,formData|}\t${10|string,integer,number,boolean,file|}\t${11|true,false|}\t\"${12:User ID}\"",
         "//\t@Success\t\t${13|200,201,204|}\t{${14|object,array,string,number,boolean|}}\t${15:resp.User}\t\"${16:comment}\"",
         "//\t@Failure\t\t${17|400,401,404,500|}\t{${18|object,array,string,number,boolean|}}\t${19:resp.UserErr}\t\"${20:comment}\"",
-        "//\t@Router\t\t\t${21:/users/{id}} [${22|get,post,put,delete,patch,options,head|}]"
+        "//\t@Router\t\t\t${21:/users/{id\\}} [${22|get,post,put,delete,patch,options,head|}]"
       ]
     },
 

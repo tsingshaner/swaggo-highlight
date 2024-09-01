@@ -91,7 +91,7 @@
       "patterns": [
         {
           "name": "entity.name.tag",
-          "match": "(?<=\t@Tags\t+)(\\w+)(?=,|$)|(?<=,\\s*)(\\w+)(?=,|$)"
+          "match": "(?<=\t@Tags\t+)(\\w+)(?=,|$)|(?<=\t@Tags\t+.+,\\s*)(\\w+)(?=,|$)"
         },
         {
           "match": "(?<=@tag\\.name\t)[^\\s]+",

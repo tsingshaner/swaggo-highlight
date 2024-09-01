@@ -2,7 +2,7 @@
   "name": "swaggo-highlight",
   "displayName": "Swaggo Highlight",
   "description": "Highlight the swaggo comments and provide swaggo comments snippets.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "qingshaner",
   "license": "ISC",
   "engines": {
